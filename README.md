@@ -23,4 +23,11 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+## To run integration tests
+
+```
+mvn spring-boot:run
+mvn verify
+```
+
 Once the application is up and running, We can access the APIs through http://localhost:8097/swagger-ui.html and access them and also we can access through postman and curl
