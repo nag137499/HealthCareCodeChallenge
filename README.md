@@ -31,3 +31,24 @@ mvn verify
 ```
 
 Once the application is up and running, We can access the APIs through http://localhost:8097/swagger-ui.html and access them and also we can access through postman and curl
+
+
+## Containerize the Codingchallenge Application
+
+TO create the docker image, we need jar file for application, we can generate it by using below command
+mvn clean install
+
+The above command creates a jar file in the target directory of the project.
+
+Build the image using this Dockerfile. To do so, move to the root directory of the application and run this command:
+docker build -t image-name .
+
+We built the image using docker build. We gave it a name with the -t flag and specified the current directory where the Dockerfile is. The image is built and stored in our local docker registry.
+
+check our image using below command
+docker images
+
+We can run our image using below command
+docker run -p 8090:8097 image-name
+
+Once the application is started, we should be able to access it at http://localhost:8090
