@@ -15,6 +15,7 @@
 	<artifactId>codingchallenge</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>codingchallenge</name>
+	<packaging>jar</packaging>
 	<description>Health Care - tracking the status of enrollees </description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -71,6 +72,11 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-test</artifactId>
+    		<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -102,6 +108,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+        			<executable>true</executable>
+    			</configuration>
 			</plugin>
 		</plugins>
 	</build>
