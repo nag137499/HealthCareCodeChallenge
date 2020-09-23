@@ -62,6 +62,12 @@ For building and running the application you need:
 use maven to build the application
 use mvn clean install command to build the application at the root directory
 
+![BuildSuccess](BuildSuccess.JPG)
+
+![Project_Documentation](Project_Documentation.jpg)
+
+![PMD_Results](PMD_Results.PNG)
+
 ## Running the application locally
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.healthcare.codingchallenge.CodingchallengeApplication` class from your IDE.
@@ -80,6 +86,10 @@ mvn verify
 ```
 
 Once the application is up and running, We can access the APIs through http://localhost:8097/swagger-ui.html and access them and also we can access through postman and curl
+
+![SwaggerAPI_Screenshot1](SwaggerAPI_Screenshot1.png)
+![SwaggerAPI_Screenshot2](SwaggerAPI_Screenshot2.png)
+![SwaggerAPI_Screenshot3](SwaggerAPI_Screenshot3.png)
 
 
 ## Containerize the Codingchallenge Application
