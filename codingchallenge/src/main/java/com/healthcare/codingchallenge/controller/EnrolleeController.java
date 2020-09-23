@@ -48,7 +48,7 @@ public class EnrolleeController {
 	
 	// Create a new Enrollee
 	@PostMapping("/enrollee")
-	public Enrollee createNote(@Valid @RequestBody Enrollee enrollee) {
+	public Enrollee createEnrollee(@Valid @RequestBody Enrollee enrollee) {
 	    return service.saveEnrollee(enrollee);
 	}
 	
