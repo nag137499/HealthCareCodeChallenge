@@ -34,14 +34,14 @@ public class DependentController {
 	private DependentService dependentService;
 
 	// Get Dependents
-	@GetMapping("/enrollees/{enrolleeId}/dependents")
+	@GetMapping("/v1/enrollees/{enrolleeId}/dependents")
 	public List<Dependent> getDependentsByEnrollee(@PathVariable(value = "enrolleeId") Long enrolleeId) {
 		return dependentService.findByEnrolleeId(enrolleeId);
 
 	}
 
 	//Create a Dependent
-	@PostMapping("/enrollees/{enrolleeId}/dependents")
+	@PostMapping("/v1/enrollees/{enrolleeId}/dependents")
 	public Dependent createDependent(@PathVariable(value = "enrolleeId") Long enrolleeId,
 			@Valid @RequestBody Dependent dependent) throws ResourceNotFoundException {
 
@@ -50,7 +50,7 @@ public class DependentController {
 	}
 
 	// Update Dependent
-	@PutMapping("/enrollees/{enrolleeId}/dependents/{Id}")
+	@PutMapping("/v1/enrollees/{enrolleeId}/dependents/{Id}")
 	public Dependent updateDependent(@PathVariable(value = "enrolleeId") Long enrolleeId,
 			@PathVariable(value = "Id") Long dependentId, @Valid @RequestBody Dependent dependentDetails)
 			throws ResourceNotFoundException {
@@ -59,7 +59,7 @@ public class DependentController {
 	}
 
 	// Delete a Dependent
-	@DeleteMapping("/enrollees/{enrolleeId}/dependents/{Id}")
+	@DeleteMapping("/v1/enrollees/{enrolleeId}/dependents/{Id}")
 	public ResponseEntity<?> deleteDependent(@PathVariable(value = "enrolleeId") Long enrolleeId,
 			@PathVariable(value = "Id") Long dependentId) throws ResourceNotFoundException {
 
