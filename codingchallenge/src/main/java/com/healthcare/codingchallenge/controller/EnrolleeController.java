@@ -32,7 +32,7 @@ public class EnrolleeController {
 	private EnrolleeService service;
 
 	// Get All Enrollees
-	@GetMapping("/enrollees")
+	@GetMapping("/v1/enrollees")
 	public @ResponseBody List<Enrollee> getAllEnrollees() {
 
 		return service.fetchAllEnrollees();
@@ -40,20 +40,20 @@ public class EnrolleeController {
 	}
 
 	// Get a Single Enrollee
-	@GetMapping("/enrollees/{id}")
+	@GetMapping("/v1/enrollees/{id}")
 	public @ResponseBody Enrollee getEnrolleeById(@PathVariable(value = "id") long enrolleeID) {
 
 		return service.getEnrolleeById(enrolleeID);
 	}
 	
 	// Create a new Enrollee
-	@PostMapping("/enrollee")
+	@PostMapping("/v1/enrollee")
 	public Enrollee createEnrollee(@Valid @RequestBody Enrollee enrollee) {
 	    return service.saveEnrollee(enrollee);
 	}
 	
 	//Update Enrollee
-	@PutMapping("/enrollee/{id}")
+	@PutMapping("/v1/enrollee/{id}")
 	public Enrollee updateEnrollee(@PathVariable(value = "id") Long enrolleeId,
 	                                        @Valid @RequestBody Enrollee enrolleeDetails) {
 
@@ -62,19 +62,19 @@ public class EnrolleeController {
 	}
 	
 	// Delete a Enrollee
-	@DeleteMapping("/enrollees/{id}")
+	@DeleteMapping("/v1/enrollees/{id}")
 	public ResponseEntity<?> deleteEnrollee(@PathVariable(value = "id") Long enrolleeId) {
 	    
 	    return service.deleteEnrollee(enrolleeId);
 	}
 	
-	@GetMapping(path = "/error")
+	@GetMapping(path = "/v1/error")
 	public void handleError(HttpServletRequest request) {
 
 	}
 
 	public String getErrorPath() {
-		return "/error";
+		return "/v1/error";
 	}
 	
 }
