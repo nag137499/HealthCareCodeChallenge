@@ -66,7 +66,7 @@ use mvn clean install command to build the application at the root directory
 
 ![Project_Documentation](Project_Documentation.jpg)
 
-![PMD_Results](PMD_Results.PNG)
+![PMD_Results](PMD_Results.png)
 
 ## Running the application locally
 
