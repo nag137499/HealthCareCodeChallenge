@@ -14,8 +14,39 @@ Add dependents to an enrollee
 Remove dependents from an enrollee
 Modify existing dependents
 
-#
-This is a Springboot microservice for tracking the status of enrollees in a health care program using H2 Database
+## General Info
+This is a Springboot microservice for tracking the status of enrollees and dependents in a health care program using H2 Database
+
+## Technologies
+Project is created with:
+
+Spring Boot 2.3.3.RELEASE
+Java 1.8
+h2 databse
+# Table Schema
+h2 database with Springboot
+
+DROP TABLE IF EXISTS enrollees;
+DROP TABLE IF EXISTS dependents;
+
+CREATE TABLE enrollees ( 
+   id INT NOT NULL AUTO_INCREMENT, 
+   name VARCHAR(50) NOT NULL, 
+   activation_status VARCHAR(20) NOT NULL, 
+   dob DATE NOT NULL,
+   phone_number VARCHAR(15),
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE dependents
+   ( id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,    
+	dob DATE NOT NULL
+	PRIMARY KEY(id),
+  CONSTRAINT fk_con_userId FOREIGN KEY (enrollee_id)
+    REFERENCES enrollees (id)
+  ON DELETE CASCADE ON UPDATE NO ACTION
+);
 
 ## Requirements
 
@@ -69,3 +100,4 @@ We can run our image using below command
 docker run -p 8090:8097 image-name
 
 Once the application is started, we should be able to access it at http://localhost:8090
+
