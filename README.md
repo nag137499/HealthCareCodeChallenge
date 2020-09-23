@@ -23,7 +23,8 @@ Project is created with:
 Spring Boot 2.3.3.RELEASE
 Java 1.8
 h2 databse
-# Table Schema
+
+Table Schema:
 h2 database with Springboot
 
 DROP TABLE IF EXISTS enrollees;
