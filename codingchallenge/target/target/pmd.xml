@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.5.1" timestamp="2020-09-23T13:09:01.037">
+<file name="C:\Users\137499\Downloads\codingchallenge\src\main\java\com\healthcare\codingchallenge\model\Dependent.java">
+<violation beginline="33" endline="33" begincolumn="26" endcolumn="27" rule="ShortVariable" ruleset="Naming" package="com.healthcare.codingchallenge.model" class="Dependent" variable="id" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like id
+</violation>
+<violation beginline="51" endline="51" begincolumn="40" endcolumn="41" rule="ShortVariable" ruleset="Naming" package="com.healthcare.codingchallenge.model" class="Dependent" method="setId" variable="id" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like id
+</violation>
+</file>
+<file name="C:\Users\137499\Downloads\codingchallenge\src\main\java\com\healthcare\codingchallenge\model\Enrollee.java">
+<violation beginline="35" endline="35" begincolumn="18" endcolumn="19" rule="ShortVariable" ruleset="Naming" package="com.healthcare.codingchallenge.model" class="Enrollee" variable="id" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like id
+</violation>
+<violation beginline="52" endline="52" begincolumn="29" endcolumn="46" rule="LongVariable" ruleset="Naming" package="com.healthcare.codingchallenge.model" class="Enrollee" variable="enrolleeDependents" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like enrolleeDependents
+</violation>
+<violation beginline="58" endline="58" begincolumn="32" endcolumn="33" rule="ShortVariable" ruleset="Naming" package="com.healthcare.codingchallenge.model" class="Enrollee" method="setId" variable="id" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like id
+</violation>
+<violation beginline="98" endline="98" begincolumn="59" endcolumn="76" rule="LongVariable" ruleset="Naming" package="com.healthcare.codingchallenge.model" class="Enrollee" method="setEnrolleeDependents" variable="enrolleeDependents" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like enrolleeDependents
+</violation>
+</file>
+<file name="C:\Users\137499\Downloads\codingchallenge\src\main\java\com\healthcare\codingchallenge\repository\DependentRepository.java">
+<violation beginline="20" endline="20" begincolumn="56" endcolumn="57" rule="ShortVariable" ruleset="Naming" package="com.healthcare.codingchallenge.repository" class="DependentRepository" method="findByIdAndEnrolleeId" variable="id" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like id
+</violation>
+</file>
+<file name="C:\Users\137499\Downloads\codingchallenge\src\main\java\com\healthcare\codingchallenge\service\DependentService.java">
+<violation beginline="25" endline="25" begincolumn="36" endcolumn="53" rule="LongVariable" ruleset="Naming" package="com.healthcare.codingchallenge.service" class="DependentService" variable="enrolleeRepository" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like enrolleeRepository
+</violation>
+<violation beginline="28" endline="28" begincolumn="37" endcolumn="55" rule="LongVariable" ruleset="Naming" package="com.healthcare.codingchallenge.service" class="DependentService" variable="dependentRepository" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like dependentRepository
+</violation>
+</file>
+<file name="C:\Users\137499\Downloads\codingchallenge\src\main\java\com\healthcare\codingchallenge\service\EnrolleeService.java">
+<violation beginline="21" endline="21" begincolumn="36" endcolumn="53" rule="LongVariable" ruleset="Naming" package="com.healthcare.codingchallenge.service" class="EnrolleeService" variable="enrolleeRepository" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like enrolleeRepository
+</violation>
+</file>
+</pmd>
