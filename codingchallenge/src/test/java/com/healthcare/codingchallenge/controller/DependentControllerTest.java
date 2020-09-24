@@ -1,6 +1,10 @@
 package com.healthcare.codingchallenge.controller;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -58,9 +62,13 @@ public class DependentControllerTest {
 
 		List<Dependent> result = dependentController.getDependentsByEnrollee(enrollee.getId());
 
+		List<Dependent> result1 = dependentController.getDependentsByEnrollee(2l);
+
 		Mockito.verify(dependentService).findByEnrolleeId(enrollee.getId());
 
+		assertNotNull(result);
 		assertEquals(dependentList, result);
+		assertTrue(result1.isEmpty());
 
 	}
 
@@ -89,6 +97,7 @@ public class DependentControllerTest {
 
 		assertEquals(dependent, result);
 		assertEquals(dependent.getEnrollee(), result.getEnrollee());
+		assertNotEquals(enrollee, result);
 	}
 
 	@Test
@@ -122,6 +131,7 @@ public class DependentControllerTest {
 
 		assertEquals(Updateddependent, result);
 		assertEquals(Updateddependent.getEnrollee(), result.getEnrollee());
+		assertNotEquals(dependent.getDependentName(), result.getDependentName());
 	}
 
 	@Test
@@ -143,9 +153,12 @@ public class DependentControllerTest {
 
 		ResponseEntity<?> result = dependentController.deleteDependent(enrollee.getId(), dependent.getId());
 
+		ResponseEntity<?> result1 = dependentController.deleteDependent(2l, dependent.getId());
+		
 		Mockito.verify(dependentService).deleteDependent(enrollee.getId(), dependent.getId());
 
 		assertEquals(ResponseEntity.ok().build(), result);
+		assertNull(result1);
 
 	}
 }

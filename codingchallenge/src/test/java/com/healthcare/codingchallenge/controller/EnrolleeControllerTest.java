@@ -1,6 +1,9 @@
 package com.healthcare.codingchallenge.controller;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,6 +52,11 @@ public class EnrolleeControllerTest {
 
 		assertEquals(enrolleeList, result);
 
+		Mockito.when(enrolleeService.fetchAllEnrollees()).thenReturn(null);
+
+		List<Enrollee> resultEnrollees = enrolleeController.getAllEnrollees();
+
+		assertNull(resultEnrollees);
 	}
 
 	@Test
@@ -67,6 +75,9 @@ public class EnrolleeControllerTest {
 
 		assertEquals(enrollee.getId(), result.getId());
 
+		Enrollee resultEnrollee = enrolleeController.getEnrolleeById(2L);
+
+		assertNull(resultEnrollee);
 	}
 
 	@Test
@@ -77,6 +88,9 @@ public class EnrolleeControllerTest {
 		enrollee.setActivationStatus(true);
 		enrollee.setDob(new Date());
 
+		Enrollee enrollee1 = new Enrollee();
+		enrollee1.setId(2l);
+
 		Mockito.when(enrolleeService.saveEnrollee(enrollee)).thenReturn(enrollee);
 
 		Enrollee result = enrolleeController.createEnrollee(enrollee);
@@ -86,6 +100,7 @@ public class EnrolleeControllerTest {
 		assertEquals(enrollee, result);
 		assertEquals(enrollee.getId(), result.getId());
 
+		assertNotEquals(enrollee1.getId(), result.getId());
 	}
 
 	@Test
@@ -112,7 +127,7 @@ public class EnrolleeControllerTest {
 
 		assertEquals(updateEnrollee, result);
 		assertEquals(updateEnrollee.getName(), result.getName());
-
+		assertNotEquals(enrollee.getName(), result.getName());
 	}
 
 	@Test
@@ -123,14 +138,16 @@ public class EnrolleeControllerTest {
 		enrollee.setActivationStatus(true);
 		enrollee.setDob(new Date());
 
-
 		Mockito.when(enrolleeService.deleteEnrollee(enrollee.getId())).thenReturn(ResponseEntity.ok().build());
 
 		ResponseEntity<?> result = enrolleeController.deleteEnrollee(enrollee.getId());
 
+		ResponseEntity<?> result1 = enrolleeController.deleteEnrollee(2l);
+
 		Mockito.verify(enrolleeService).deleteEnrollee(enrollee.getId());
 
 		assertEquals(ResponseEntity.ok().build(), result);
+		assertNull(result1);
 
 	}
 }
